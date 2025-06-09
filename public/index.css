@@ -1,0 +1,314 @@
+@font-face {
+  font-family: 'WonderfulBranding';
+  src: url('Wonderful_Branding.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+  font-family: 'EB Garamond', sans-serif;
+  --color-1: #fff9f2;
+  --color-2: #eee4db;
+  --color-3: #eba082;
+  --color-4: #eb9864;
+  --color-5: #532b2b;
+  --color-6: #a96b5b;
+}
+
+section {
+  scroll-margin-top: 3rem;
+  display: flow-root;
+}
+
+h3, h4 {
+  font-family: 'WonderfulBranding', 'EB Garamond';
+  margin: 0;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.fullheight {
+  height: 100vh;
+}
+
+.bigtext {
+  font-size: 3rem;
+}
+
+.fancytext {
+  font-family: 'WonderfulBranding', 'EB Garamond';
+  margin-bottom: -1em;
+  margin-top: -0.5em;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.totheleft {
+  align-items: flex-start;
+}
+
+.headerbutton {
+  text-decoration: none;
+  border-radius: .3rem;
+  padding: .2rem .4rem;
+  color: var(--color-3);
+  background-color: var(--color-1);
+}
+
+.headerbutton:hover {
+  background-color: #e3dad0;
+}
+
+.map {
+  width: 100%;
+  height: 30rem;
+}
+
+.button {
+  border: 1px solid var(--color-6);
+  background-color: var(--color-1);
+  color: var(--color-5);
+  padding: 1rem;
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* section-specific */
+
+section#names {
+  color: var(--color-4);
+  background-color: var(--color-1);
+}
+
+section#names > div.column {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 249, 242, 0),
+      rgba(255, 249, 242, 0) 75%,
+      rgba(255, 249, 242, 1)
+    ),
+    url('https://media-public.canva.com/BJ6Ls/MAE2DpBJ6Ls/1/s.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  gap: 6rem;
+}
+
+section#header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--color-2);
+}
+
+section#schedule {
+  color: var(--color-5);
+  background-color: var(--color-2);
+  padding: 3rem 15%;
+}
+
+section#schedule > .column {
+  padding-left: 3rem;
+  gap: 2rem;
+}
+
+section#parking {
+  color: var(--color-1);
+  background-color: var(--color-6);
+  padding: 3rem 15%;
+}
+
+section#parking .swiper {
+  width: 20em;
+  height: 10em;
+}
+
+section#parking .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+section#routes {
+  color: var(--color-5);
+  background-color: var(--color-2);
+  padding: 3rem 15%;
+}
+
+section#routes .swiper-button-prev, section#routes .swiper-button-next {
+  position: static;
+}
+
+section#routes #cropped-parking {
+  display: block;
+  width: 100%;
+  height: 25rem;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(238, 228, 219, 0),
+      rgba(238, 228, 219, 0) 95%,
+      rgba(238, 228, 219, 1)
+    ),
+    url('streetparking.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+section#routes #cropped-parking .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+section#routes #cropped-parking .icon {
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+section#routes #cropped-parking:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+section#routes #cropped-parking:hover .icon {
+  opacity: 1;
+}
+
+section#gift {
+  color: var(--color-1);
+  background: var(--color-2) url('emiel.jpg') center no-repeat;
+  height: 100vh;
+  text-shadow:
+    1px 1px 3px rgba(0, 0, 0, 0.7),
+    -1px 1px 3px rgba(0, 0, 0, 0.7),
+    1px -1px 3px rgba(0, 0, 0, 0.7),
+    -1px -1px 3px rgba(0, 0, 0, 0.7);
+  padding: 0 25%;
+}
+
+section#gift .column {
+  gap: 1rem;
+}
+
+section#contact {
+  color: var(--color-5);
+  background-color: var(--color-2);
+  padding: 3rem 15%;
+}
+
+section#contact > .column {
+  gap: 3rem;
+}
+
+section#contact .modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+section#contact .modal-content {
+  border: 1px solid var(--color-6);
+  background-color: var(--color-2);
+  border-radius: 6px;
+  padding: 1.5rem;
+  width: 12em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section#contact .close-btn {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+section#contact .modal-content input[type='text'] {
+  border: 1px solid var(--color-6);
+  background-color: var(--color-1);
+  padding: 1em;
+}
+
+section#goodbye {
+  color: var(--color-5);
+  background: url('https://media-public.canva.com/zc8Gs/MAE2Dszc8Gs/1/s.png');
+  background-size: cover;
+  aspect-ratio: 800 / 450;
+  width: 100%;
+}
+
+section#goodbye .column {
+  gap: 3rem;
+  height: 100%;
+}
+
+/* modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/*
+https://media-public.canva.com/BJ6Ls/MAE2DpBJ6Ls/1/s.png
+  slingers
+https://media-public.canva.com/MADo-yq4Ghc/1/thumbnail.png
+  krabbel
+https://media-public.canva.com/zc8Gs/MAE2Dszc8Gs/1/s.png
+  horizontale highlight
+https://media-public.canva.com/l54_E/MAE2Dll54_E/1/tl.png
+  appelsien en pruim
+*/

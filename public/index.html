@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trouw</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB Garamond">
+        <link rel="stylesheet" href="index.css"/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+
+        <section id="names">
+            <div class="column fullwidth fullheight">
+                <div class="column fullwidth" style="color:#eb9864">
+                    <span class="fancytext bigtext">Gerlinde</span>
+                    <span class="fancytext">en</span>
+                    <span class="fancytext bigtext">Robin</span>
+                </div>
+                <span><i>16 augustus 2025</i></span>
+            </div>
+        </section>
+
+        <section id="header">
+            <a class="headerbutton" href="#schedule">Dagverloop</a>
+            <a class="headerbutton" href="#parking">Parking</a>
+            <a class="headerbutton" href="#routes">Route</a>
+            <a class="headerbutton" href="#contact">Contact</a>
+        </section>
+
+        <section id="schedule">
+            <h3>Dagverloop</h3>
+            <div class="column">
+                <div class="column fullwidth totheleft">
+                    <h4>Ceremonie 9u15</h4>
+                    <em>Graag stipt aanwezig</em>
+                    <span>Stadhuis Gent</span>
+                    <span>Botermarkt 1, 9000 Gent</span>
+                    <a class="button" href="#parking">Bekijk parkeergelegenheden ></a>
+                </div>
+                <div class="column fullwidth totheleft">
+                    <h4>Brunch 10u15</h4>
+                    <em>einde voorzien rond 14u</em>
+                    <span>Alix - Maison d'amis</span>
+                    <span>Kortrijksesteenweg 206, 9000 Gent</span>
+                    <a class="button" href="#routes">Bekijk routes ></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="parking">
+            <h3>Parking</h3>
+            <div class="row fullwidth">
+                <div id="map_parkings" class="map"></div>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <b>BePark - Parking Stadhuis Gent</b>
+                        <p>📏 150m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=bepark - parking stadhuis gent" target="_blank">🧭 Google Maps</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <b>Parking Vrijdagmarkt</b>
+                        <p>📏 400m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=parking vrijdagmarkt" target="_blank">🧭 Google Maps</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <b>Parking Sint-Michiels (P7)</b>
+                        <p>📏 600m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=parking sint-michiels - (p7)" target="_blank">🧭 Google Maps</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <b>Parking Ramen (P8)</b>
+                        <p>📏 800m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=parking ramen - (p8)" target="_blank">🧭 Google Maps</a>
+                    </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section id="routes">
+
+            <h3>Route van stadhuis naar Alix</h3>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="swiper-button-prev"></div>
+                            <h4>Te voet</h4>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <div id="map_route" class="map"></div>
+                        <h5>2.3km, 30 minuten langs de Leie</h5>
+                        <ul>
+                            <li>Wandel via de Botermarkt naar het Emile Braunplein. Deze straat loopt over in de Mageleinstraat.</li>
+                            <li>Sla rechtsaf naar de Volderstraat.</li>
+                            <li>Steek het water over via het bruggetje.</li>
+                            <li>Sla linksaf naar de Ajuinlei/Recollectelei/Lindenlei.</li>
+                            <li>Volg vanaf nu steeds het water via de Ajuinlei/Recollectelei/Lindenlei/Albert Baertsoenkaai/Bijlokekaai.</li>
+                            <li>Bij het grote kruispunt met de Godshuizenlaan/Ijzerlaan oversteken en neem de straat Holdaal die uitkomt op de Kortrijksesteenweg.</li>
+                            <li>Alix / Maison d’amis bevindt zich aan de rechterkant op nummer 206.</li>
+                        </ul>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="swiper-button-prev"></div>
+                            <h4>Met de auto</h4>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <a id="cropped-parking" href="https://map.seety.co/Kortrijksesteenweg%20206,%209000%20Gent/15.55?lang=nl" target="_blank">
+                            <div class="overlay">
+                                <span class="icon">→</span>
+                            </div>
+                        </a>
+                        <h5>15 minuten ... TODO</h5>
+                        <span>Je kan best parkeren</span>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <div class="swiper-button-prev"></div>
+                            <h4>Met de tram</h4>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                        <span>TODO nog een kaartje hier?</span>
+                        <h5>500m wandelen, 20 minuten in een koekendoos</h5>
+                        <ul>
+                            <li>Wandel via de Botermarkt naar het Emile Braunplein. Deze straat loopt over in de Mageleinstraat. Vervolg richting de Kalandestraat / Kalandeberg/ Koestraat.</li>
+                            <li>Neem aan tramhalte VOGELMARKT Tram 1 richting Flanders Expo OF Tram 3 richting Zwijnaarde.</li>
+                            <li>Afstappen aan tramhalte GENT SINT PIETERS.</li>
+                            <li>Via de Koniging Elisabethlaan 500m wandelen richting de Kortrijksesteenweg 206.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section id="gift">
+            <div class="column fullheight">
+                <h3>Cadeautip</h3>
+                <span>Jullie aanwezigheid op onze bruiloft is het mooiste cadeau dat we ons kunnen wensen.</span>
+                <span>Mocht je toch graag iets willen geven, dan zouden we een envelopje zeer waarderen.</span>
+                <span>BE63 9734 8344 5408</span>
+                <span></span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Contactgegevens</h3>
+
+            <div class="column">
+                <div class="column">
+                    <span>047 112 50 84</span>
+                    <span>047 431 57 24</span>
+                </div>
+                <div class="column">
+                    <span>Foto's mogen achteraf hier geupload worden,</span>
+                    <span>of verstuurd naar <a href="mailto:debruin.schmitz@hotmail.com">debruin.schmitz@hotmail.com</a></span>
+                </div>
+                <button id="openModalBtn" class="button" onclick="modalOpen()">Upload foto's</button>
+            </div>
+
+            <div id="uploadModal" class="modal">
+              <div class="modal-content">
+                <span class="close-btn" id="closeModalBtn" onclick="modalClose()">&times;</span>
+                <h2>Upload foto's</h2>
+
+                <label for="nameInput">Naam:</label>
+                <input type="text" id="nameInput" placeholder="Vul jouw naam in" required>
+
+                <label for="fileInput">Selecteer Bestanden:</label>
+                <input type="file" id="fileInput" multiple required>
+
+                <button id="uploadBtn" class="button">Upload</button>
+              </div>
+            </div>
+
+            <div id="successModal" class="modal">
+              <div class="modal-content">
+                <h2>Bedankt!</h2>
+              </div>
+            </div>
+
+            <div id="failureModal" class="modal">
+              <div class="modal-content">
+                <h2>Er is iets misgegaan, misschien is het toch beter als je ze mailt ...</h2>
+              </div>
+            </div>
+        </section>
+
+        <section id="goodbye">
+            <div class="column fullwidth">
+                <h3>Tot dan!</h3>
+                <h3>Gerlinde & Robin</h3>
+            </div>
+        </section>
+
+        <section id="footer">
+            <div class="row" style="background-color: #d9c2c2; flex-wrap: wrap; gap: 0 2rem">
+                <span style="white-space: nowrap">G: 047 112 50 84</span>
+                <span style="white-space: nowrap">R: 047 431 57 24</span>
+                <span style="white-space: nowrap">@: debruin.schmitz@hotmail.com</span>
+            </div>
+        </section>
+
+    </body>
+</html>

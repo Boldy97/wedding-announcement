@@ -4,7 +4,9 @@ function onload() {
   initialiseIcons();
   initialiseMapParkings();
   initialiseMapRoute();
-  initialiseCarousel();
+  initialiseCarouselParking();
+  initialiseCarouselRoutes();
+  initialiseModals();
 }
 
 let iconCityHall;
@@ -47,7 +49,7 @@ function initialiseMapParkings() {
   L.marker([51.05540253906053, 3.726356147496037], {icon:iconParking})
     .addTo(map)
     .on('click', function () {
-      swiper.slideToLoop(0);
+      swiperParking.slideToLoop(0);
     });
   parkingLines.push(L.polyline(
     [[51.054318,3.725266],[51.054314,3.725283],[51.054333,3.725301],[51.054355,3.725321],[51.054346,3.725347],[51.054315,3.725434],[51.054653,3.725727],[51.055261,3.72663],[51.055386,3.726339]]
@@ -57,7 +59,7 @@ function initialiseMapParkings() {
   L.marker([51.056463383573735, 3.725931648129965], {icon:iconParking})
     .addTo(map)
     .on('click', function () {
-      swiper.slideToLoop(1);
+      swiperParking.slideToLoop(1);
     });;
   parkingLines.push(L.polyline(
     [[51.054318,3.725266],[51.054314,3.725283],[51.054333,3.725301],[51.054355,3.725321],[51.054346,3.725347],[51.054315,3.725434],[51.054653,3.725727],[51.055261,3.72663],[51.055728,3.72733],[51.056052,3.726632],[51.056303,3.726205],[51.056364,3.726091],[51.056452,3.725917]]
@@ -67,7 +69,7 @@ function initialiseMapParkings() {
   L.marker([51.052986544704346, 3.719579125309941], {icon:iconParking})
     .addTo(map)
     .on('click', function () {
-      swiper.slideToLoop(2);
+      swiperParking.slideToLoop(2);
     });;
   parkingLines.push(L.polyline(
     [[51.054318,3.725266],[51.054314,3.725283],[51.054293,3.725263],[51.054269,3.725241],[51.054261,3.725267],[51.05423,3.725347],[51.054013,3.725078],[51.053923,3.724928],[51.053859,3.724831],[51.053769,3.724718],[51.053814,3.724546],[51.053865,3.724411],[51.053871,3.724391],[51.053859,3.724373],[51.053967,3.723999],[51.053816,3.723896],[51.053801,3.723746],[51.053757,3.723544],[51.053745,3.723497],[51.053643,3.723433],[51.053673,3.723219],[51.05372,3.722896],[51.053748,3.722703],[51.053869,3.721978],[51.053883,3.721829],[51.05389,3.721549],[51.053876,3.720941],[51.053875,3.720914],[51.053856,3.720196],[51.053855,3.720166],[51.053836,3.7197],[51.053791,3.719136],[51.053756,3.718896],[51.053727,3.718898],[51.05364,3.718906],[51.053552,3.718819],[51.053533,3.718801],[51.053421,3.719064],[51.053373,3.719397],[51.053344,3.719495],[51.053276,3.719598],[51.053215,3.719651],[51.052966,3.719674],[51.052965,3.71958]]
@@ -77,7 +79,7 @@ function initialiseMapParkings() {
   L.marker([51.05535733784029, 3.7164722768509955], {icon:iconParking})
     .addTo(map)
     .on('click', function () {
-      swiper.slideToLoop(3);
+      swiperParking.slideToLoop(3);
     });;
   parkingLines.push(L.polyline(
     [[51.054318,3.725266],[51.054314,3.725283],[51.054293,3.725263],[51.054269,3.725241],[51.054261,3.725267],[51.05423,3.725347],[51.054013,3.725078],[51.053923,3.724928],[51.053859,3.724831],[51.053769,3.724718],[51.053814,3.724546],[51.053865,3.724411],[51.053871,3.724391],[51.053859,3.724373],[51.053967,3.723999],[51.053816,3.723896],[51.053801,3.723746],[51.053757,3.723544],[51.053745,3.723497],[51.053643,3.723433],[51.053673,3.723219],[51.05372,3.722896],[51.053748,3.722703],[51.053869,3.721978],[51.053883,3.721829],[51.05389,3.721549],[51.053876,3.720941],[51.053875,3.720914],[51.053856,3.720196],[51.053855,3.720166],[51.053836,3.7197],[51.053791,3.719136],[51.053756,3.718896],[51.053733,3.718653],[51.053759,3.718464],[51.053779,3.718407],[51.053896,3.718159],[51.054012,3.717893],[51.054118,3.717723],[51.054337,3.71744],[51.054413,3.717303],[51.054433,3.717207],[51.054489,3.716574],[51.05456,3.71655],[51.05484,3.716567],[51.055207,3.716637],[51.055274,3.716577],[51.055392,3.716546],[51.055378,3.716463]]
@@ -107,9 +109,9 @@ function initialiseMapRoute() {
 
 }
 
-let swiper;
-function initialiseCarousel() {
-  swiper = new Swiper('.swiper', {
+let swiperParking;
+function initialiseCarouselParking() {
+  swiperParking = new Swiper('section#parking .swiper', {
     loop: true,
     autoplay: {
       delay: 3000,      // time in ms between slides
@@ -132,6 +134,22 @@ function initialiseCarousel() {
   onCarouselChange(0);
 }
 
+function initialiseCarouselRoutes() {
+  new Swiper('section#routes .swiper', {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    noSwiping: true,
+    noSwipingClass: 'map'
+  });
+}
+
 function onCarouselChange(index) {
   for(let i=0;i<parkingLines.length;i++) {
     parkingLines[i].setStyle(index === i ? {
@@ -145,4 +163,66 @@ function onCarouselChange(index) {
     });
   }
   parkingLines[index].bringToFront();
+}
+
+let uploadModal;
+let successModal;
+let failureModal;
+
+function initialiseModals() {
+  uploadModal = document.getElementById('uploadModal');
+  successModal = document.getElementById('successModal');
+  failureModal = document.getElementById('failureModal');
+  window.onclick = (e) => {
+    if (e.target.className === 'modal') modalClose();
+  };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') modalClose();
+  });
+  document.getElementById('uploadBtn').onclick = async () => {
+    const name = document.getElementById('nameInput').value;
+    const files = document.getElementById('fileInput').files;
+
+    if(!files.length) {
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', name);
+    for (let file of files) {
+      formData.append('files', file);
+    }
+
+    try {
+      const response = await fetch('/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const result = await response.json();
+      if(!result.success) {
+        throw 'errored';
+      }
+      modalClose();
+      successModal.style.display = 'flex';
+      modalReset();
+    } catch(e) {
+      modalClose();
+      failureModal.style.display = 'flex';
+    }
+  };
+}
+
+function modalOpen() {
+  uploadModal.style.display = 'flex';
+}
+
+function modalClose() {
+  uploadModal.style.display = 'none';
+  successModal.style.display = 'none';
+  failureModal.style.display = 'none';
+}
+
+function modalReset() {
+  document.getElementById('nameInput').value = '';
+  document.getElementById('fileInput').value = null;
 }
