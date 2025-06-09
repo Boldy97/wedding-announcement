@@ -1,0 +1,35 @@
+* make basic ass layout, just the necessary elements, no styling
+
+hallo, wij trouwen
+-> fotootje
+
+
+-- header --
+* ceremonie
+* brunch
+* transport
+	* parkings
+	* route stadhuis > alix
+		* te voet
+		* openbaar vervoer
+		* auto
+* praktisch
+	* contactgegevens
+	* cadeau
+
+
+
+tekst cadeautip
+* Your presence at our wedding is the greatest gift of all. However, if you wish to honour us with a gift, a cash gift would be very welcome.
+* Cash gifts are welcome if you'd like to contribute to our honeymoon. But your presence on the day is what's most important to us.
+
+
+ideas
+* achtergrond verf int begin scrolt mee, maar stopt dan opt einde van voorblad
+* highlight huidig geselecteerde section
+* unfocused trail - grey solid / focused trail - green dashed moving towards
+* investigate showing current position on map
+
+* opt moment zelf, kaartje om fotos te laten uploaden
+
+
