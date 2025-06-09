@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trouw</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB Garamond">
+        <link rel="stylesheet" href="index.css"/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+
+        <!-- frfr -->
+
+        <section id="names">
+            <div class="column fullwidth fullheight">
+                <div class="column fullwidth" style="color:#eb9864">
+                    <span class="fancytext bigtext">Gerlinde</span>
+                    <span class="fancytext">en</span>
+                    <span class="fancytext bigtext">Robin</span>
+                </div>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span>&nbsp;</span>
+                <span><i>16 augustus 2025</i></span>
+            </div>
+        </section>
+
+        <section id="header">
+            <a class="button" href="#schedule">Dagverloop</a>
+            <a class="button" href="#parking">Parking</a>
+            <a class="button" href="#routes">Route</a>
+            <a class="button" href="#practical">Praktisch</a>
+            <a class="button" href="#fotos">Fotos</a>
+        </section>
+
+        <section id="schedule">
+            <h3>Dagverloop</h3>
+            <div class="column">
+                <div class="column fullwidth totheleft">
+                    <h4>Ceremonie 9u15</h4>
+                    <em>Graag stipt aanwezig</em>
+                    <span>Stadhuis Gent</span>
+                    <span>Botermarkt 1, 9000 Gent</span>
+                    <a class="button" href="#parking">Bekijk parkeergelegenheden ></a>
+                </div>
+                <div class="column fullwidth totheleft">
+                    <h4>Brunch 10u15</h4>
+                    <em>einde voorzien rond 14u</em>
+                    <span>Alix - Maison d'amis</span>
+                    <span>Kortrijksesteenweg 206, 9000 Gent</span>
+                    <a class="button" href="#routes">Bekijk routes ></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="parking">
+            <h3>Parking</h3>
+            <div class="row fullwidth">
+                <div id="map_parkings" class="map"></div>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <b>BePark - Parking Stadhuis Gent</b>
+                        <p>📏 150m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=bepark - parking stadhuis gent" target="_blank">🧭 Google Maps</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <b>Parking Vrijdagmarkt</b>
+                        <p>📏 400m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=parking vrijdagmarkt" target="_blank">🧭 Google Maps</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <b>Parking Sint-Michiels (P7)</b>
+                        <p>📏 600m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=parking sint-michiels - (p7)" target="_blank">🧭 Google Maps</a>
+                    </div>
+                    <div class="swiper-slide">
+                        <b>Parking Ramen (P8)</b>
+                        <p>📏 800m</p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=parking ramen - (p8)" target="_blank">🧭 Google Maps</a>
+                    </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- fr -->
+
+        <!-- testing -->
+
+        
+        <section id="routes">
+
+            <h2>Route van stadhuis naar Alix</h2>
+
+            <div class="row fullwidth">
+                <div id="map_route" class="map"></div>
+            </div>
+
+            <h2>TODO ook ne carousel, maar enkel alst scherm te smal is?</h2>
+            <div class="row totheleft">
+                <div>
+                    <h4>Te voet</h4>
+                    <span>TODO routebeschrijving van word document</span>
+                </div>
+                <div>
+                    <h4>Met de auto</h4>
+                    <ol>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=parking sint-michiels - (p7)" target="_blank">Parking P17 ></a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=parking sint-michiels - (p7)" target="_blank">Parking Georgette ></a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=parking sint-michiels - (p7)" target="_blank">Parking Chez Bernardus ></a></li>
+                    </ol>
+                </div>
+                <div>
+                    <h4>Met de tram</h4>
+                    <span>TODO ook wat uitleg</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="practical">
+            <h2>TODO andere naam</h2>
+
+            <h3>Cadeautip</h3>
+
+            <div class="row">
+                <div class="paint-4 column">BE12 3456 7890 1234</div>
+            </div>
+        </section>
+
+        <section id="fotos">
+            <h2>Foto's</h2>
+
+            <div class="row">
+                <div class="emiel"></div>
+                <div class="column">
+                    <span></span>
+                    <span>Foto's zullen hier achteraf worden gedeeld. Ook jullie foto's zijn welkom. Deel ze via: </span>
+                    <a href="mailto:debruin.schmitz@hotmail.com">debruin.schmitz@hotmail.com</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="column paint-1" style="height:100vh">
+                <span class="mediumfont">Tot dan!</span>
+                <span>Gerlinde & Robin</span>
+            </div>
+            <div class="row" style="background-color: #d9c2c2; flex-wrap: wrap; gap: 0 2rem">
+                <span style="white-space: nowrap">G: +32 471 12 50 84</span>
+                <span style="white-space: nowrap">R: +32 474 31 57 24</span>
+                <span style="white-space: nowrap">@: debruin.schmitz@hotmail.com</span>
+            </div>
+        </section>
+
+    </body>
+</html>
+
+
+
