@@ -32,6 +32,14 @@ h3, h4 {
   margin: 0;
 }
 
+h5 {
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+}
+
 .fullwidth {
   width: 100%;
 }
@@ -62,6 +70,10 @@ h3, h4 {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.gap {
+  gap: 1rem;
 }
 
 .totheleft {
@@ -141,8 +153,8 @@ section#schedule > .column {
 }
 
 section#parking {
-  color: var(--color-1);
-  background-color: var(--color-6);
+  color: var(--color-4);
+  background-color: var(--color-1);
   padding: 3rem 15%;
 }
 
@@ -165,8 +177,8 @@ section#routes {
   padding: 3rem 15%;
 }
 
-section#routes .swiper-button-prev, section#routes .swiper-button-next {
-  position: static;
+section#routes .custom-pagination {
+  padding-bottom: 1em;
 }
 
 section#routes #cropped-parking {

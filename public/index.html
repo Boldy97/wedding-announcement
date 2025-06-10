@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB Garamond">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="index.css"/>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -53,7 +54,8 @@
         </section>
 
         <section id="parking">
-            <h3>Parking</h3>
+            <h3>Parking bij ceremonie</h3>
+            <h5>Let op, zowel de ceremonie als de brunch bevinden zich in de LEZ-zone!</h5>
             <div class="row fullwidth">
                 <div id="map_parkings" class="map"></div>
             </div>
@@ -92,16 +94,17 @@
 
             <h3>Route van stadhuis naar Alix</h3>
 
+            <div class="row custom-pagination">
+                <button class="button" style="width:30%" data-index="0">Te voet</button>
+                <button class="button" style="width:30%" data-index="1">Met de auto</button>
+                <button class="button" style="width:30%" data-index="2">Met de tram</button>
+            </div>
+
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="row">
-                            <div class="swiper-button-prev"></div>
-                            <h4>Te voet</h4>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                        <div id="map_route" class="map"></div>
                         <h5>2.3km, 30 minuten langs de Leie</h5>
+                        <div id="map_route" class="map"></div>
                         <ul>
                             <li>Wandel via de Botermarkt naar het Emile Braunplein. Deze straat loopt over in de Mageleinstraat.</li>
                             <li>Sla rechtsaf naar de Volderstraat.</li>
@@ -114,28 +117,21 @@
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="row">
-                            <div class="swiper-button-prev"></div>
-                            <h4>Met de auto</h4>
-                            <div class="swiper-button-next"></div>
-                        </div>
+                        <h5>15 minuten cruisen</h5>
                         <a id="cropped-parking" href="https://map.seety.co/Kortrijksesteenweg%20206,%209000%20Gent/15.55?lang=nl" target="_blank">
                             <div class="overlay">
                                 <span class="icon">→</span>
                             </div>
                         </a>
-                        <h5>15 minuten ... TODO</h5>
-                        <span>Je kan best parkeren</span>
+                        <p>Met de auto is het ±15 minuten rijden van de ceremonie naar de feestzaal Alix.</p>
+                        <p>Bij de feestzaal kan je op straat parkeren.</p>
+                        <p>Op bovenstaande kaart zijn de oranje straten voorzien van parking.</p>
+                        <p>In de paarse straten mag je niet parkeren. Deze zijn voorbehouden voor bewoners.</p>
                     </div>
 
                     <div class="swiper-slide">
-                        <div class="row">
-                            <div class="swiper-button-prev"></div>
-                            <h4>Met de tram</h4>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                        <span>TODO nog een kaartje hier?</span>
                         <h5>500m wandelen, 20 minuten in een koekendoos</h5>
+                        <span>TODO nog een kaartje hier?</span>
                         <ul>
                             <li>Wandel via de Botermarkt naar het Emile Braunplein. Deze straat loopt over in de Mageleinstraat. Vervolg richting de Kalandestraat / Kalandeberg/ Koestraat.</li>
                             <li>Neem aan tramhalte VOGELMARKT Tram 1 richting Flanders Expo OF Tram 3 richting Zwijnaarde.</li>
@@ -144,8 +140,6 @@
                         </ul>
                     </div>
                 </div>
-                <!-- Pagination -->
-                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -160,18 +154,27 @@
         </section>
 
         <section id="contact">
-            <h3>Contactgegevens</h3>
+            <h3>Foto's</h3>
 
             <div class="column">
-                <div class="column">
-                    <span>047 112 50 84</span>
-                    <span>047 431 57 24</span>
+                <span>Foto's mogen achteraf hier geupload worden :</span>
+                <button id="openModalBtn" class="button" onclick="modalOpen()">Upload hier foto's</button>
+                <span>of verstuurd via Whatsapp naar :</span>
+                <div class="row gap">
+                    <button class="button row gap">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://api.whatsapp.com/send?phone=32471125084" target="_blank">Gerlinde</a>
+                    </button>
+                    <button class="button row gap">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://api.whatsapp.com/send?phone=32474315724" target="_blank">Robin</a>
+                    </button>
                 </div>
-                <div class="column">
-                    <span>Foto's mogen achteraf hier geupload worden,</span>
-                    <span>of verstuurd naar <a href="mailto:debruin.schmitz@hotmail.com">debruin.schmitz@hotmail.com</a></span>
-                </div>
-                <button id="openModalBtn" class="button" onclick="modalOpen()">Upload foto's</button>
+                <div>of verstuurd via email</div>
+                <button class="button row gap">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:debruin.schmitz@hotmail.com" target="_blank">debruin.schmitz@hotmail.com</a>
+                </button>
             </div>
 
             <div id="uploadModal" class="modal">
@@ -205,7 +208,7 @@
         <section id="goodbye">
             <div class="column fullwidth">
                 <h3>Tot dan!</h3>
-                <h3>Gerlinde & Robin</h3>
+                <h3>Gerlinde en Robin</h3>
             </div>
         </section>
 

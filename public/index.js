@@ -127,30 +127,14 @@ function initialiseCarouselParking() {
     },
     on: {
       realIndexChange: function () {
-        onCarouselChange(this.realIndex);
+        onCarouselParkingChange(this.realIndex);
       }
     }
   });
-  onCarouselChange(0);
+  onCarouselParkingChange(0);
 }
 
-function initialiseCarouselRoutes() {
-  new Swiper('section#routes .swiper', {
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    noSwiping: true,
-    noSwipingClass: 'map'
-  });
-}
-
-function onCarouselChange(index) {
+function onCarouselParkingChange(index) {
   for(let i=0;i<parkingLines.length;i++) {
     parkingLines[i].setStyle(index === i ? {
       dashArray: null,
@@ -163,6 +147,38 @@ function onCarouselChange(index) {
     });
   }
   parkingLines[index].bringToFront();
+}
+
+let swiperRoutes;
+function initialiseCarouselRoutes() {
+  swiperRoutes = new Swiper('section#routes .swiper', {
+    loop: true,
+    noSwiping: true,
+    noSwipingClass: 'map',
+    on: {
+      realIndexChange: function () {
+        onCarouselRoutesChange(this.realIndex);
+      }
+    }
+  });
+  document.querySelectorAll('section#routes .custom-pagination button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const index = parseInt(btn.getAttribute('data-index'), 10);
+      swiperRoutes.slideToLoop(index);
+    });
+  });
+  onCarouselRoutesChange(0);
+}
+
+function onCarouselRoutesChange(index) {
+  document.querySelectorAll('section#routes .custom-pagination > button').forEach((btn) => {
+    btn.style.color = 'var(--color-5)';
+    btn.style.backgroundColor = 'var(--color-1)';
+  });
+  document.querySelectorAll(`section#routes .custom-pagination > button:nth-child(${index+1})`).forEach((btn) => {
+    btn.style.color = 'var(--color-1)';
+    btn.style.backgroundColor = 'var(--color-6)';
+  });
 }
 
 let uploadModal;
