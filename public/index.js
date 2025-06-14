@@ -36,7 +36,12 @@ function initialiseIcons() {
 }
 
 function initialiseMapParkings() {
-  const map = L.map('map_parkings').setView([51.05435031540796, 3.7228293370842573], 16);
+  const screenWidth = window.innerWidth;
+  let viewLevel = 16;
+  if(screenWidth < 800) {
+    viewLevel = 15;
+  }
+  const map = L.map('map_parkings').setView([51.054318, 3.725266], viewLevel);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
